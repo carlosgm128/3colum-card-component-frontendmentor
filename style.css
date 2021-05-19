@@ -1,0 +1,133 @@
+/* region: general styles start */
+:root {
+  /* Primary colors */
+  --clr-Bright-orange: hsl(31, 77%, 52%);
+  --clr-Dark-cyan: hsl(184, 100%, 22%);
+  --clr-Very-dark-cyan: hsl(179, 100%, 13%);
+  /* Neutral colors */
+  --clr-transparent-white: hsla(0, 0%, 100% 0.75%);
+  --Very-light-gray: hsl(0, 0%, 95%);
+  --Very-light-gray-hover: hsl(0, 0%, 83%);
+}
+* {
+  box-sizing: border-box;
+}
+body {
+  /* background-color: aliceblue; */
+  font-size: 15px;
+  font-family: "Lexend Deca", sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
+  width: 100vw;
+  margin: 15vh 0;
+}
+p {
+  color: var(--Very-light-gray);
+}
+h2,
+a {
+  color: var(--Very-light-gray);
+}
+/* region: general styles end */
+.container {
+  max-width: 85%;
+  display: grid;
+  place-content: center;
+  margin: auto;
+}
+.card {
+  display: flex;
+  flex-direction: column;
+  border-radius: 10px;
+  overflow: hidden;
+  /* margin-top: 3.5rem; */
+}
+.card > * {
+  flex: 1 1 auto;
+}
+.card-item {
+  padding: 3em;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+.title {
+  font-size: 3rem;
+  font-family: "Big Shoulders Display", cursive;
+  font-weight: 500;
+  width: max-content;
+  text-transform: uppercase;
+  margin-bottom: 0.5em;
+}
+.btn {
+  display: inline-flex;
+  text-decoration: none;
+  background: var(--Very-light-gray);
+  color: black;
+  padding: 0.5em 1.5em;
+  border-radius: 25px;
+  text-align: center;
+  margin-top: 0.5em;
+  border: 2px solid transparent;
+}
+.sedans .btn {
+  color: var(--clr-Bright-orange);
+}
+.suvs {
+  background: var(--clr-Dark-cyan);
+}
+.suvs .btn {
+  color: var(--clr-Dark-cyan);
+}
+.luxury {
+  background: var(--clr-Very-dark-cyan);
+}
+.luxury .btn {
+  color: var(--clr-Very-dark-cyan);
+}
+.btn:hover {
+  background: var(--Very-light-gray-hover);
+}
+.btn:active {
+  border: 2px solid var(--Very-light-gray);
+  color: var(--Very-light-gray);
+  background: transparent;
+}
+.card .sedans {
+  background: var(--clr-Bright-orange);
+}
+.attribution {
+  display: grid;
+  place-content: center;
+  margin: auto;
+  max-width: 65%;
+  margin-top: 3rem;
+  background: var(--clr-Very-dark-cyan);
+  color: var(--Very-light-gray);
+  padding: 0.5em;
+  border-radius: 0.5rem;
+}
+/* only apply this the width is 375 and adobe */
+@media (min-width: 769px) {
+  .container {
+    min-height: 600px;
+    min-width: 90%;
+    box-shadow: 0 0 8px 10px rgba(0, 0, 0, 0.2);
+  }
+  .card {
+    flex-direction: row;
+    max-width: 80%;
+    margin: auto;
+  }
+  .card-item {
+    max-height: 70vh;
+  }
+}
+@media (max-width: 1024px) {
+  .card {
+    max-width: 70vw;
+  }
+}
